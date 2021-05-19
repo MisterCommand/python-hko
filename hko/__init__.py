@@ -24,3 +24,8 @@ class HKO:
         """Retreive rhrread data from HKO API"""
         data = await self._get_data("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en")
         return data
+
+    async def get_fnd(self) -> Dict:
+        """Retreive fnd data from HKO API"""
+        data = await self._get_data("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en")
+        return data
