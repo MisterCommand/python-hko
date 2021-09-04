@@ -4,7 +4,7 @@ Please refer to the Official Documentation for request parameters and response d
 [Official Documentation](https://www.hko.gov.hk/en/weatherAPI/doc/files/HKO_Open_Data_API_Documentation.pdf)
 
 ## Usage Example
-`
+```python
 from hko import HKO
 import asyncio
 from aiohttp import ClientSession, ClientResponse
@@ -21,4 +21,4 @@ async def main():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
 loop.close()
-`
+```
