@@ -18,7 +18,7 @@ class HKO:
         async with self._session.get(url) as response:
             return await response.json()
 
-    async def get(self, type, lang = "en") -> Dict:
+    async def get(self, dataType, lang = "en") -> Dict:
         """Get data"""
-        data = await self._request(f"https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType={type}&lang={lang}")
+        data = await self._request(f"https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType={dataType}&lang={lang}")
         return data
