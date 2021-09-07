@@ -132,4 +132,7 @@ pyhon-hko.code-workspace
 
 dev.py
 .vscode
+
+# Poetry
 pyproject.toml
+poetry.lock
