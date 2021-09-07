@@ -11,6 +11,7 @@ Please refer to the Official Documentation for request parameters and response d
 `hko.HKO(websession)`
 Manage and perform requests
 Return: hko.HKO class
+
 Parameter | Optional | Type | Description
 --- | --- | --- | ---
 websession | no | ClientSession | see [aiphttp](https://docs.aiohttp.org/en/stable/client_reference.html)
@@ -18,6 +19,7 @@ websession | no | ClientSession | see [aiphttp](https://docs.aiohttp.org/en/stab
 `hko.HKO.weather(type, lang="en")`
 Retrieve weather data from Weather Information API
 Return: dictionary
+
 Parameter | Optional | Type | Description | Accepted values
 --- | --- | --- | --- | ---
 dataType | no | string | type of data requested | see [Official API Documentation][hko-documentation]
