@@ -1,7 +1,6 @@
 __version__ = '0.1.0'
 
 import logging
-import json
 from aiohttp import ClientSession
 from typing import Dict
 
@@ -22,9 +21,9 @@ class HKO:
             if response.status != 200:
                 raise HKOError("Cannot connect to HKO API")
             try:
-                content = json.loads(response)
+                content = await response.json()
             except Exception as e:
-                raise HKOError("HKO API Error")
+                raise HKOError(f"HKO API Error: {e}")
             return content
 
     async def weather(self, dataType, lang = "en") -> Dict:
