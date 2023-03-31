@@ -58,7 +58,7 @@ class HKO:
         return data
 
 
-locations = [
+LOCATIONS = [
     {"LOCATION": "Hong Kong Observatory", "DISTRICT": "Yau Tsim Mong"},
     {"LOCATION": "King's Park", "DISTRICT": "Yau Tsim Mong"},
     {"LOCATION": "Wong Chuk Hang", "DISTRICT": "Southern District"},
