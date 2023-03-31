@@ -56,3 +56,34 @@ class HKO:
             url = base_url
         data = await self._request(url)
         return data
+
+
+locations = [
+    {"LOCATION": "Hong Kong Observatory", "DISTRICT": "Yau Tsim Mong"},
+    {"LOCATION": "King's Park", "DISTRICT": "Yau Tsim Mong"},
+    {"LOCATION": "Wong Chuk Hang", "DISTRICT": "Southern District"},
+    {"LOCATION": "Ta Kwu Ling", "DISTRICT": "North District"},
+    {"LOCATION": "Lau Fau Shan", "DISTRICT": "Yuen Long"},
+    {"LOCATION": "Tai Po", "DISTRICT": "Tai Po"},
+    {"LOCATION": "Sha Tin", "DISTRICT": "Sha Tin"},
+    {"LOCATION": "Tuen Mun", "DISTRICT": "Tuen Mun"},
+    {"LOCATION": "Tseung Kwan O", "DISTRICT": "Sai Kung"},
+    {"LOCATION": "Sai Kung", "DISTRICT": "Sai Kung"},
+    {"LOCATION": "Cheung Chau", "DISTRICT": "Southern District"},
+    {"LOCATION": "Chek Lap Kok", "DISTRICT": "Tuen Mun"},
+    {"LOCATION": "Tsing Yi", "DISTRICT": "Kwai Tsing"},
+    {"LOCATION": "Shek Kong", "DISTRICT": "Yuen Long"},
+    {"LOCATION": "Tsuen Wan Ho Koon", "DISTRICT": "Tsuen Wan"},
+    {"LOCATION": "Tsuen Wan Shing Mun Valley", "DISTRICT": "Tsuen Wan"},
+    {"LOCATION": "Hong Kong Park", "DISTRICT": "Central & Western District"},
+    {"LOCATION": "Shau Kei Wan", "DISTRICT": "Eastern District"},
+    {"LOCATION": "Kowloon City", "DISTRICT": "Kowloon City"},
+    {"LOCATION": "Happy Valley", "DISTRICT": "Wan Chai"},
+    {"LOCATION": "Wong Tai Sin", "DISTRICT": "Wong Tai Sin"},
+    {"LOCATION": "Stanley", "DISTRICT": "Southern District"},
+    {"LOCATION": "Kwun Tong", "DISTRICT": "Kwun Tong"},
+    {"LOCATION": "Sham Shui Po", "DISTRICT": "Sham Shui Po"},
+    {"LOCATION": "Kai Tak Runway Park", "DISTRICT": "Kowloon City"},
+    {"LOCATION": "Yuen Long Park", "DISTRICT": "Yuen Long"},
+    {"LOCATION": "Tai Mei Tuk", "DISTRICT": "Tai Po"},
+]
