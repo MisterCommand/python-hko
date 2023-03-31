@@ -7,7 +7,7 @@ import asyncio
 from aiohttp import ClientSession
 
 def test_version():
-    assert __version__ == '0.2.0'
+    assert __version__ == '0.3.2'
 
 # WEATHER
 class TestWeather:
