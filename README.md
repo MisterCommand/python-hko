@@ -2,49 +2,71 @@
 [![PyPI][pypi-releases-shield]][pypi-releases]
 
 # python-hko
-A python warpper for getting Hong Kong SAR local weather from Hong Kong Observatory Open Data API.
+A python warpper for retrieving Hong Kong SAR local weather from Hong Kong Observatory Open Data API.
 Please refer to the Official Documentation for request parameters and response details.
 [Official API Documentation][hko-documentation]
 
 ## Reference
 ### HKO Module
-`hko.HKO(websession)`
+`hko.HKO(session)`
 Manage and perform requests
 Return: hko.HKO class
 
-Parameter | Optional | Type | Description
+Parameter | Optional (default value) | Type | Description
 --- | --- | --- | ---
-websession | no | ClientSession | see [aiphttp](https://docs.aiohttp.org/en/stable/client_reference.html)
+session | no | ClientSession | see [aiohttp](https://docs.aiohttp.org/en/stable/client_reference.html)
 
-`hko.HKO.weather(type, lang="en")`
+`hko.HKO.weather(dataType, lang)`
 Retrieve weather data from Weather Information API
 Return: dictionary
 
-Parameter | Optional | Type | Description | Accepted values
---- | --- | --- | --- | ---
-dataType | no | string | type of data requested | see [Official API Documentation][hko-documentation]
-lang | yes | string| language used in response | see [Official API Documentation][hko-documentation]
+Parameter | Optional (default value) | Type | Description
+--- | --- | --- | ---
+dataType | no | string | type of data requested
+lang | yes (en) | string | language used in response
+
+`hko.HKO.earthquake(dataType, lang)`
+Retrieve weather data from Earthquake Information API
+Return: dictionary
+
+Parameter | Optional (default value) | Type | Description
+--- | --- | --- | ---
+dataType | no | string | type of data requested
+lang | yes (en) | string | language used in response
+
+`hko.HKO.openData(dataType, lang)`
+Retrieve weather data from Earthquake Information API
+Return: dictionary
+
+Parameter | Optional (default value) | Type | Description
+--- | --- | --- | ---
+dataType | no | string | type of data requested
+lang | yes (en) | string | language used in response
+station | - | string | refer to [Official API Documentation][hko-documentation]
+year | - | string | refer to [Official API Documentation][hko-documentation]
+month | - | string |refer to [Official API Documentation][hko-documentation]
+day | - | string | refer to [Official API Documentation][hko-documentation]
+hour | - | string | refer to [Official API Documentation][hko-documentation]
+
 
 ## Usage Example
 Get and print local weather forcast general situation in English
 ```python
-from hko import HKO
+from hko import HKO, HKOError
 import asyncio
-from aiohttp import ClientSession, ClientResponse
+from aiohttp import ClientSession
 from aiohttp import ClientConnectorError
 
 async def main():
-    async with ClientSession() as websession:
+    async with ClientSession() as session:
         try:
-            hko = HKO(websession)
-            fnd = await hko.weather("fnd")
+            hko = HKO(session)
+            fnd = await hko.weather(dataType="fnd")
             print(fnd["generalSituation"])
-        except ClientConnectorError as error:
+        except HKOError as error:
             print(error)
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
-loop.close()
+asyncio.run(main())
 ```
 
 
